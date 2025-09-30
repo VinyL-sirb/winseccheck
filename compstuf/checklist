@@ -106,9 +106,34 @@
       Turn off Remote Assistance Connections
 
 12) Turn on and configure Windows Defender Firewall
+  Powershell  
+    "netsh advfirewall reset
+    netsh advfirewall set currentprofile state on
+    netsh advfirewall set allprofiles state on
+    netsh advfirewall firewall set rule name="Remote Assistance (DCOM-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Remote Assistance (PNRP-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Remote Assistance (RA Server TCP-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Remote Assistance (SSDP TCP-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Remote Assistance (SSDP UDP-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Remote Assistance (TCP-In)" new enable=no 
+    netsh advfirewall firewall set rule name="Telnet Server" new enable=no 
+    netsh advfirewall firewall set rule name="netcat" new enable=no"
+  Control Panel
+    Windows firewall custom settings:
+      Control Panel>System and Security>Windows Firewall
+        Common Firewall Exceptions
+          • Core Networking– Regular Microsoft Windows services that retrieve data from the Internet
+          – If you don’t enable this exception across all three types of networks, some Microsoft Services and programs will not run properly
+          • File and Printer Sharing– Allows you to share the contents of selected folders and locally attached printers with other computers
+          • Remote Assistance– Allows a user to temporarily remotely control another Windows computer over a network or the Internet to resolve issues
+          • Remote Desktop– Allows users to access their user accounts and files remotely
+          • UPnP Framework (Universal Plug-and-Play)– Allows devices to connect to and automatically establish working configurations with other devices on the same network
+
 
 13) Use your windows sysiternals
   a)Sigcheck64:
-    "Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sigcheck.zip -OutFile Sigcheck.zip
-    Expand-Archive -Path .\Sigcheck.zip -DestinationPath
-    .\sigcheck.exe -u -e C:\windows\system32"
+    ".\sigcheck.exe -u -e C:\windows\system32"
+  b)Process Explorer:
+    WIP
+
+14) Check for Backdoors
