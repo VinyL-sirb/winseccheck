@@ -61,3 +61,49 @@
     Block dangerous and deceptive content
     Block dangerous downloads
     Warn you about unwanted and uncommon software
+
+9) Go Over Secpol in case you script didn't work as planned
+  Security Options
+    Account: Limit local account use of blank passwords... - Enable
+    Devices: Restrict CD-Rom access to locally logged-on user... - Enable
+    Devices: Restrict Floppy access to locally logged-on user... - Enable
+    Domain Member: LDAP server signing requirements - Enable
+    Domain Member: Digitally encrypt or sign secure channel data (always) - Enable
+    Interactive Logon: Do not display last user name - Enable
+    Interactive Logon: Do not require CTRL + ALT + DEL - Disable
+    Microsoft Network Client: Digitally sign communications (always)  Enable
+    Microsoft Network Client: Send unencrypted password to third-party SMB Server-Disable
+    Microsoft network server: Digitally sign communications (always) Enable
+    Network Access: Allow anonymous SID/Name translation - Disable
+    Network Access: Do not allow anonymous enumeration of SAM accounts and shares -Enable
+    Network Access: Let Everyone permissions apply to anonymous user - Disable
+    Behavior of the elevation prompt for administrators in Admin Approval Mode configured to prompt for consent of secure laptop
+
+10) Same with GPEDIT
+  Computer Configuration
+    Administrative Templates
+      Windows components
+        Windows Defender Smart Screen
+          Configure Windows Smart Screen
+            Enabled
+              Make sure that below, it is set to warn only
+        Auto Play
+          Turn off Autoplay
+            Enabled
+        Windows Updates
+          Configure Automatic Updates
+        Remote Desktop Services
+          Remote Desktop Session Host
+            Security
+              Require use of specific security layer for remote (RDP) connections
+                Enabled
+                  Also set it from RDP to SSL
+
+11) Same with Remote Assistance Connections
+  Windows + R
+    Sysdm.cpl
+      Go to Remote
+      Turn off Remote Assistance Connections
+
+12) Turn on and configure Windows Defender Firewall
+  
