@@ -1,1 +1,12 @@
+1) COPY UR README AND FORENSICS QUESTIONS INTO ANOTHER DOC
+  I know that you prob won't think abt it later, but it is good to have the resources when doing a postround debrief.
 
+2) Do your forensic questions.
+  If you are stuck on one of them, try switching off to another windows specialist for new eyes on the puzzle
+  There are some resources in the forensics file as well
+
+3) Go through users/groups in both control panel and mmc
+  Technically you can do everything in mmc, but its easier to see admin group and if they have password in control panel
+  The following powershell command lists all admin to make looking through stuff easier:
+    Get-LocalGroupMember -Group "Administrators"
+  In mmc ensure that none of the accounts are disabled and all of the passwords will expire + user can change password
