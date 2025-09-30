@@ -108,3 +108,7 @@
 12) Turn on and configure Windows Defender Firewall
 
 13) Use your windows sysiternals
+  a)Sigcheck64:
+    "Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sigcheck.zip -OutFile Sigcheck.zip
+    Expand-Archive -Path .\Sigcheck.zip -DestinationPath
+    .\sigcheck.exe -u -e C:\windows\system32"
