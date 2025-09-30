@@ -1,0 +1,63 @@
+Here are a couple sources to help out with forensics questions
+
+Decoding
+  Decoding is ez with this stuff
+  
+SDDL String in a file
+  “(Get-Acl “Full Directory”) .SDDL”
+  
+File Permissions of A SMB Share
+  “Get-SmbShareAccess -Name The name of the share” 
+  
+SID of Deleted Users
+  Only works if Active Directory Recycle bin is enabled
+  "Get-ADObject -ldapFilter:"(msDS-LastKnownRDN=*)" -IncludeDeletedObjects -properties *
+    uhh run this command thru a fact check... idk if it works and i haven't tested in a bit
+  
+Previously used powershell commands
+  Only works if Powershell Transcription is enabled
+  Local Group Policy Editor
+  Filter by the state of configured policies and look for “Turn on Powershell Transcription”
+  Click on that and look for “Transcript Output Directory”
+  
+Files?
+  U can view another user’s files thru “this PC”, then go to “users”, in file explorer
+  U can see the properties of a file thru right clicking it then properties
+  U can see other properties of the file by searching up <file type> viewer
+  If u r still stuck i wanna feel bad for u
+  Ig if u wanna see more files stuff.
+    https://www.autopsy.com/download/
+    https://sleuthkit.org/autopsy/docs/user-docs/3.1/
+    
+Backdoor via ports
+  "Netstat -anob"
+  Look at the listening ports
+  Look at the ip address 
+  Last bit of the address is what’s important
+  Look up the address
+
+File Hashes
+  "Get-FileHash -algorithm ____ C:/watever filepath | Format-List"
+    Types of algorithms
+    SHA1
+    SHA256
+    SHA384
+    SHA512
+    MD5
+    
+Oh, are MMC snap-ins Unavailable?
+  It’s probably blocked in a registry key.
+  Open Registry Editor
+  All the snap ins are in the key:
+  HKEY_LOCAL_MACHINE\Software\Microsoft\MMC\Snapins
+  I know that the names of the snapins may look intimidating like {1823qhfiaw} but u just need to click on it and look for the part that says “name string”, then if its the one that is blocked, u change the (default)
+  
+SSH info
+  https://github.com/benjeems/packetStrider/blob/master/README.md 
+  
+Information related to a certain process (like where a backdoor is)
+  Open process explorer (from sysinternals)
+  Look for the process (More on that here) 
+  
+Services that are scheduled to start/service permissions
+  https://processhacker.sourceforge.io/
