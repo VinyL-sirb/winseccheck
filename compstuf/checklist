@@ -10,3 +10,54 @@
   The following powershell command lists all admin to make looking through stuff easier:
     Get-LocalGroupMember -Group "Administrators"
   In mmc ensure that none of the accounts are disabled and all of the passwords will expire + user can change password
+  While you are in mmc it would also be nice to go thru shares
+
+4) Update Needed Programs and Start Updating Windows
+
+5) Quickly Scroll through Services
+  Look for:
+    Stop and Disable
+      IIS 
+      Microsoft FTP service
+      NetMeeting Remote Desktop Sharing – VoIP 
+      Print Spooler
+      Remote Assistance Connections
+      Remote Assistance Connections
+      Remote Desktop Configuration
+      Remote Desktop Help Session Manager
+      Remote Desktop Services
+      Remote Desktop Services UserMode
+      Remote Registry 
+      RIP listener
+      Routing and Remote Access
+      Server
+      Simple File Sharing 
+      SNMP Trap
+      SSD Discovery Service
+      TCP/IP NetBIOS Helper
+      Telephony
+      Telnet 
+      Universal Plug and Play Device Host 
+      UPnP Device Host
+      Windows Messenger Service
+      World Wide Web Publishing
+    Turn On:
+      Window Event Log
+      Microsoft Windows Smart Screen
+
+6) TAKE A SCREENSHOT OF YOUR PROGRESS
+  You will run a few scripts next, so if anything is undone, screenshot to know what is different
+
+7) Run Your Scripts:
+  Currently I am using a Hardening Kitty Hail Mary, Post Hardening Kitty Script, LGPO script, and Secpol import file
+
+8) If Firefox is your browser:
+  enable pop-up blocker
+    Go to the three bars>Go to settings>Go to the search bar and search for pop up blocker>Check the box
+  Click Firefox in the Menu bar
+  Select Preferences or Settings
+  Select the Privacy & Security panel
+  Under Deceptive Content and Dangerous Software Protection, check the following boxes:
+    Block dangerous and deceptive content
+    Block dangerous downloads
+    Warn you about unwanted and uncommon software
