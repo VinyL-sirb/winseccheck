@@ -1,0 +1,6 @@
+If Secpol isn’t working???
+Go to: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SecEdit
+Right Click “Reg Values” and go to permissions. Adjust them so you are one of the people that can access them
+If that still doesn’t work, look for the secpol file:
+	Win+S, secpol. Right click and find file location. 
+	Select open with MMC
