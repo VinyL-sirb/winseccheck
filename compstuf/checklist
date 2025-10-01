@@ -141,3 +141,7 @@
 15) Check for viruses on powershell
   "attrib -r -a -s -h *."
   anything that gives an output other than "Access Denied" could be malicous
+
+16) Remote Access:
+  Win+S Remote Access.
+  Ensure that Remote access and anything related to that in the menu is disabled
