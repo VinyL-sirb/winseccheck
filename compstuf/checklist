@@ -137,3 +137,7 @@
     WIP
 
 14) Check for Backdoors
+
+15) Check for viruses on powershell
+  "attrib -r -a -s -h *."
+  anything that gives an output other than "Access Denied" could be malicous
